@@ -66,7 +66,7 @@ function Form({onSubmit, theme, onSwitchTheme, error, onError})
                 <textarea 
                     ref={textAreaRef}
                     cols="10"
-                    className="w-full outline-none p-1 dark:bg-slate-800"
+                    className="rounded-md w-full outline-none p-1 dark:bg-slate-800"
                     placeholder="Une nouvelle tâche"
                     onChange={checkError}
                 ></textarea>           

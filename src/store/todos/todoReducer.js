@@ -1,7 +1,7 @@
 const storedStateJSON = localStorage.getItem('mr__todo-list');
 const storedState = JSON.parse(storedStateJSON)
 
-let id = storedStateJSON ? storedState.todos.length : 1
+var id = storedStateJSON ? storedState.todos.length : 1
 
 
 const initialState = storedStateJSON ? storedState.todos : []
@@ -30,10 +30,11 @@ export function todoReducer(state=initialState, action)
             return []
 
         case ADD_TODO:
+            id++;
             return [
                 ...state, 
                 {
-                    id : id++,
+                    id : id,
                     label : action.payload,
                     completed : false,
                     time: setDate()
