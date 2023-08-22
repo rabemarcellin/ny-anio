@@ -2,6 +2,7 @@ import { useRef } from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { useSelector } from "react-redux"
+import { BsArrowReturnLeft } from "react-icons/bs"
 import { MdDarkMode, MdLightMode } from "react-icons/md"
 import { createNewTodoAction } from "../store/todos/todoActions"
 import { errorSelector } from "../store/error/errorSelectors"
@@ -60,31 +61,37 @@ function Form({onSubmit, theme, onSwitchTheme, error, onError})
         textAreaRef.current.focus()
     }
 
-    return <div className="py-2 mx-2">
-        <form onSubmit={createNewTodo} onKeyDownCapture={onKeyEnter} className="grid h-full">
-            <div>
-                <textarea 
+    return (
+        <form onSubmit={createNewTodo} onKeyDownCapture={onKeyEnter} className="">
+            <>
+                <input type="text"
                     ref={textAreaRef}
                     cols="10"
-                    className="rounded-md w-full outline-none p-1 dark:bg-slate-800"
+                    className="rounded-md w-full outline-none p-2 dark:bg-slate-800 border shadow-md"
                     placeholder="Une nouvelle tâche"
                     onChange={checkError}
-                ></textarea>           
-            </div>
-            <div className="flex justif-between w-full gap-2">
-                <div id="error-field" className={`flex-1 flex items-center`}>
-                    <span className="italic font-bold text-red-500">
-                        {error.isError ? error.errorText : ""} 
-                    </span>
+                />           
+            </>
+            <div className="flex items-center justify-between my-2">
+                <div className="flex gap-2 items-center">
+                    <div className="btn btn--blue p-1 px-2 text-white" type="submit"><BsArrowReturnLeft /></div>
+                    <div className="text-gray-500 text-base">pour ajouter</div>
                 </div>
+                {/* dark mode off
+                
                 <div className="flex-none flex justify-end items-center">
                     <button className="btn" onClick={switchTheme}>{theme === "light" ? <MdDarkMode size={18} className="text-gray-900" /> : <MdLightMode size={18} className="text-yellow-500" /> }</button>
-                    <button className="btn btn--blue text-white" type="submit">Ajouter</button>
-                </div>
+                </div> */}
             </div>
-            
+            <div className="flex justif-between w-full gap-2">
+                <div id="error-field" className={`flex-1 flex items-center justify-center`}>
+                    <span className="text-red-500 text-sm">
+                        {error.isError ? error.errorText : ""} 
+                    </span>
+                </div> 
+            </div>
         </form>
-    </div>
+    )
 }
 
 Form.propTypes = {

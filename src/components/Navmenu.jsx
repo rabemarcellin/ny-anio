@@ -21,9 +21,9 @@ function FilterButton({filter}) {
     dispatch(updateFilter(filter.value))
   }
 
-  return (<button onClick={setFilter} className={` py-2 mx-2 ${ filter.value === filterState ? "border-b-2 border-blue-500" : ""}`}>
+  return (<button onClick={setFilter} className={`px-4 rounded-md py-2 ${ filter.value === filterState ? "bg-white text-black shadow dark:bg-gray-950" : ""}`}>
     <span className="mx-1">{filter.label}</span>
-    <span className={`${todosLength > 0 ? "inline":"hidden"} bg-gray-200 dark:bg-gray-950 py-1 px-2 rounded-full mx-1`}>{todosLength}</span>
+    <span className={`${todosLength > 0 ? "inline":"hidden"}`}>| {todosLength}</span>
     </button>)
 }
 
@@ -33,7 +33,7 @@ FilterButton.propTypes = {
 
 export default function TodoFilters({todosLength}) {
   return (
-    <div className="flex">
+    <div className="flex my-2 rounded-lg bg-gray-500 text-white dark:bg-gray-900 p-1">
       {filters.map((filter, index) => <FilterButton key={"filter"+index} todosLength={todosLength} filter={filter} active={index === 0} /> )}
     </div>
   )

@@ -47,7 +47,7 @@ export default function TodoItem({todo, provided}) {
 
   return (
         <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}
-        className="mx-2 border border-b-4 rounded-md border-b-blue-300 dark:border-gray-950 bg-gray-50 dark:bg-gray-900 p-0.5 my-1"   
+        className="border-b hover:border-2 hover:rounded-lg hover:bg-white hover:shadow-md dark:border-gray-950 dark:bg-gray-900 p-0.5 my-1"   
         >
             <div className=" flex justify-between items-center">
                 <div className="flex items-center justify-between w-full">
@@ -64,7 +64,7 @@ export default function TodoItem({todo, provided}) {
                         <input ref={labelInput} 
                             type="text" 
                             defaultValue={todo.label} 
-                            className="w-full outline-none px-2 bg-gray-50 dark:bg-gray-950 focus:bg-gray-200 rounded-md disabled:bg-gray-50 dark:disabled:bg-gray-900" 
+                            className="w-full outline-none px-2 mr-2 bg-gray-50 dark:bg-gray-950 focus:bg-gray-200 rounded-md disabled:bg-gray-50 dark:disabled:bg-gray-900" 
                             disabled={readOnly} 
                             onKeyDownCapture={updateTodo}
                         />
