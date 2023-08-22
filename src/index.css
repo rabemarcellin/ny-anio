@@ -17,11 +17,11 @@
   body
   {
     font-family: 'Fira Sans Condensed', sans-serif;
-    background-image: url("../assets/img/bg.jpg");
-    background-origin: border-box;
-    background-position: top;
-    background-size: cover;
-  }
+    background-color: #f6f6fa;
+opacity: 1;
+background-image:  linear-gradient(#eaeaec 1px, transparent 1px), linear-gradient(to right, #eaeaec 1px, #f6f6fa 1px);
+background-size: 20px 20px;
+  } 
 }
 
 @layer components

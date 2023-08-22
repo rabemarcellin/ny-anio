@@ -11,13 +11,13 @@ export default function Footer() {
                 </div>
                 <div className="flex justify-center gap-2">
                     <div>
-                        <a href="https://www.facebook.com/rabemarcellin"><RiFacebookCircleFill size={32} className="hover:text-gray-500" /></a>
+                        <a href="https://www.facebook.com/marcellinr.rabe"><RiFacebookCircleFill size={32} className="hover:text-gray-500" /></a>
                     </div>
                     <div>
                         <a href="https://linkedin.com/in/marcellinrabe"><RiLinkedinFill size={32} className="hover:text-gray-500" /></a>
                     </div>
                     <div>
-                        <a href="https://www.github.com/marcellinrabe"><RiGithubFill size={32} className="hover:text-gray-500" /></a>
+                        <a href="https://www.github.com/rabemarcellin"><RiGithubFill size={32} className="hover:text-gray-500" /></a>
                     </div>
                 </div> 
 

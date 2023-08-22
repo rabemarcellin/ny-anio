@@ -74,7 +74,7 @@ function Form({onSubmit, theme, onSwitchTheme, error, onError})
             </>
             <div className="flex items-center justify-between my-2">
                 <div className="flex gap-2 items-center">
-                    <div className="btn btn--blue p-1 px-2 text-white" type="submit"><BsArrowReturnLeft /></div>
+                    <div className="btn btn--blue p-1 px-2 text-white flex items-center" type="submit"><BsArrowReturnLeft /></div>
                     <div className="text-gray-500 text-base">pour ajouter</div>
                 </div>
                 {/* dark mode off

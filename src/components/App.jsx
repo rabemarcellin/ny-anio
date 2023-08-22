@@ -38,8 +38,8 @@ export default function App() {
 
   return (
         <div className={theme}>
-          <div className="pt-4 w-screen min-h-screen overflow-hidden grid sm:flex sm:items-center sm:justify-center sm:bg-gray-5 dark:bg-slate-800 dark:sm:bg-gray-950 transition-all duration-200">
-              <div className="w-full sm:h-fit sm:max-w-xl sm:grid sm:items-center">
+          <div className="pt-4 px-4 min-h-screen overflow-hidden grid sm:flex sm:items-center sm:justify-center sm:bg-gray-5 dark:bg-slate-800 dark:sm:bg-gray-950 transition-all duration-200">
+              <div className="w-full h-screen overflow-hidden sm:h-fit sm:max-w-xl flex flex-col sm:grid sm:items-center">
                   <ListTodoWithStore/>            
                   <Footer/>      
               </div>

@@ -23,42 +23,21 @@ function TodoList({todos}) {
     return (
         <>
             <Navmenu todosLength={todos.length}/>
-            <div className="bg-gray-50 shadow my-2 border p-1 dark:bg-slate-800 sm:h-fit sm:rounded-xl dark:text-white transition-none">
+            <div className="bg-gray-50 shadow my-2 border p-1 dark:bg-slate-800 sm:h-fit rounded-xl dark:text-white transition-none">
                 <FormWithStore/>
             </div>
-            <div className="flex-1 overflow-y-auto py-2 mt-2 bg-gray-50 border shadow-lg">
-            <div className="p-1 sm:h-64 overflow-auto todo--container">
+            <div className="flex-1 overflow-y-auto py-2 mt-2 bg-gray-200 border shadow-lg">
+            <div className="p-1 sm:h-64 overflow-auto todo--container h-full">
                 <div className="mx-auto h-full">
                 {
                     todoList ? (
-                        <DragDropContext onDragEnd={onDragEnd}>
-                            <div className="h-[500px] overflow-y-auto">
-                            <Droppable droppableId="todos">
-                            {(provided, snapshot) => (
-                                <div ref={provided.innerRef} {...provided.droppableProps}> 
-                                    {todoList.map((todo, index) => (
-                                        <Draggable  key={todo.id} draggableId={todo.id.toString()} index={index}>
-                                        {(provided) => (
-                                            <TodoItem 
-                                                key={todo.id} 
-                                                todo={todo} 
-                                                provided={provided}
-                                            />
-                                        )}
-                                        </Draggable>
-                                    )
-                                    )
-                                    } 
-                                {provided.placeholder}  
-                                </div>
-                            )}
-                            </Droppable>
-
+                        <div className="overflow-y-auto">
+                            <div> 
+                                {todoList.map((todo, index) => (
+                                    <TodoItem key={todo.id} todo={todo} />
+                                ))}     
                             </div>
-                        
-                        </DragDropContext >
-
-                        
+                        </div>
                     ) : (
                         <div className="h-full flex justify-center items-center">
                             <span>vide</span>
